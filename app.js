@@ -31,7 +31,7 @@ function calculateFinalResults(loadingImg,results) {
     hideResults();
     //Create errorDiv for warning
     const errorDiv = document.createElement('div');
-    errorDiv.className = 'alert alert-danger';
+    errorDiv.className = 'errorDiv alert alert-danger';
     errorDiv.appendChild(document.createTextNode('An empty field, so Kindly recheck your entry'));
     // Insert the error above the heading
     const card = document.querySelector('.card');
@@ -40,7 +40,7 @@ function calculateFinalResults(loadingImg,results) {
     // Clear Result Fields
     clearResultFields();
     // Remove ErrorDiv
-    removeErrorDiv(errorDiv);
+    setTimeout(removeErrorDiv, 2000);
   } else {
     // calculate total interest
     const calculateTotalInterest = parseFloat(((inputLoanAmount.value * inputInterest.value) / 100) * inputYearsToRepay.value);
@@ -64,11 +64,11 @@ function clearResultFields() {
   inputTotalInterest.value = '';
 }
 
-// Remove errorDiv
-function removeErrorDiv(errorDiv) {
-  setTimeout(() => {
-    errorDiv.remove();
-  }, 3000);
+// Remove errorDiv function
+function removeErrorDiv() {
+  if (document.querySelector('.card').firstElementChild.classList.contains('errorDiv')) {
+    document.querySelector('.errorDiv').remove();
+  }
 }
 
 // Show loadingImg function
