@@ -19,17 +19,17 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">$</span>
                 </div>
-                <input value="1000" type="number" class="form-control inputLoanAmount" placeholder="Loan Amount"
+                <input type="float" class="form-control inputLoanAmount" placeholder="Loan Amount"
                   aria-label="Loan Amount" />
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">%</span>
                 </div>
-                <input value="15" type="number" class="form-control inputInterest" placeholder="Interest" aria-label="Interest" />
+                <input type="float" class="form-control inputInterest" placeholder="Interest" aria-label="Interest" />
               </div>
               <div class="input-group mb-3">
-                <input value="2" type="number" class="form-control inputYearsToRepay" placeholder="Years To Repay"
+                <input type="float" class="form-control inputYearsToRepay" placeholder="Years To Repay"
                   aria-label="Years To Repay" />
               </div>
               <div class="input-group mb-3">
@@ -37,29 +37,30 @@
               </div>
             </form>
             <!-- Loading image -->
-            <div id="loading" class="d-none">
+            <div class="loadingImg d-none">
+              <p class="text-danger font-weight-bold">calculating ...</p>
               <img src="imgs/loading.gif" alt="loading" />
             </div>
             <!-- Results section -->
-            <section class="results">
+            <section class="results d-none">
               <h5>Results</h5>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">Monthly Payment</span>
                 </div>
-                <input type="number" class="form-control inputMonthlyPayment" disabled />
+                <input type="float" class="form-control inputMonthlyPayment" disabled />
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">Total Payment</span>
                 </div>
-                <input type="number" class="form-control inputTotalPayment" disabled />
+                <input type="float" class="form-control inputTotalPayment" disabled />
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">Total Interest</span>
                 </div>
-                <input type="number" class="form-control inputTotalInterest" disabled />
+                <input type="float" class="form-control inputTotalInterest" disabled />
               </div>
             </section>
           </div>
