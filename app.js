@@ -23,8 +23,7 @@ document.getElementById('requirementsForm').addEventListener('submit', function(
   const inputTotalInterest = document.querySelector('.inputTotalInterest');
 
 // Create calculateFinalResults function
-function calculateFinalResults(loadingImg,results) {
-
+function calculateFinalResults() {
   if (inputLoanAmount.value === "" || inputInterest.value === "" || inputYearsToRepay.value === "") {
     // Hide results and loadingImg
     hideLoadingImg();
@@ -35,8 +34,8 @@ function calculateFinalResults(loadingImg,results) {
 
     // Create errorDiv for warning
     const errorDiv = document.createElement('div');
-    errorDiv.className = 'errorDiv alert alert-danger';
-    errorDiv.appendChild(document.createTextNode('An empty field, so Kindly recheck your entry'));
+    errorDiv.className = 'errorDiv alert alert-danger font-weight-bold';
+    errorDiv.innerHTML = 'An empty field or wrong entry <br> Kindly recheck your entry';
     // Insert the error above the heading
     const card = document.querySelector('.card');
     const heading = document.querySelector('.heading');
@@ -79,14 +78,17 @@ function removeErrorDiv() {
 function showLoadingImg(){
   document.querySelector('.loadingImg').setAttribute('style', 'display: block !important');
 }
+
 // Hide loadingImg function
 function hideLoadingImg(){
   document.querySelector('.loadingImg').setAttribute('style', 'display: none !important');
 }
+
 // Show results function
 function showResults(){
   document.querySelector('.results').setAttribute('style', 'display: block !important');
 }
+
 // Hide results function
 function hideResults(){
   document.querySelector('.results').setAttribute('style', 'display: none !important');
