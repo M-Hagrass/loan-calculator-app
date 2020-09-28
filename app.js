@@ -29,7 +29,11 @@ function calculateFinalResults(loadingImg,results) {
     // Hide results and loadingImg
     hideLoadingImg();
     hideResults();
-    //Create errorDiv for warning
+
+    // Remove ErrorDiv if it's already exists to prevent appear more than one warning
+    removeErrorDiv();
+
+    // Create errorDiv for warning
     const errorDiv = document.createElement('div');
     errorDiv.className = 'errorDiv alert alert-danger';
     errorDiv.appendChild(document.createTextNode('An empty field, so Kindly recheck your entry'));
